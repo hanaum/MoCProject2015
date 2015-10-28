@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({
 require('./config/mongoose');
 require('./config/routes')(app);
 
-app.listen(8000, function () {
-  console.log('MoC listening on port 8000');
+var port = process.env.PORT || 8000;
+app.listen(port, function () {
+  console.log('MoC listening on port ' + port);
 })
